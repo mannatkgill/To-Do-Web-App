@@ -3,6 +3,12 @@ body, html{
     width: 100vw;
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(to bottom right, rgb(152, 100, 152), rgb(10, 0, 8));
-    
+    background-image: linear-gradient(to bottom right, rgb(152, 100, 152), rgb(10, 0, 8));  
+}
+h1{
+    color: white;
+    text-align: center;
+    font-size: 75px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 100px;
 }
