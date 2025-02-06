@@ -12,3 +12,10 @@ h1{
     font-family: 'Courier New', Courier, monospace;
     padding: 100px;
 }
+#taskInput{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    height: 3%;
+}
