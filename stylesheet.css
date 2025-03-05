@@ -1,4 +1,4 @@
-body, html{
+body, html {
     background-image: linear-gradient(to bottom right, rgb(223, 186, 234), rgb(74, 17, 88));
     margin: 0;
     padding: 0;
@@ -6,7 +6,12 @@ body, html{
     height: 100%;
 }
 
-pre{
+* {
+    margin: 0; 
+    padding: 0; 
+}
+
+p{
     text-align: center;
     font-size: 50px;
     padding-top: 100px;
@@ -14,4 +19,37 @@ pre{
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     letter-spacing: 50px;
+}
+
+#inputBar{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 25%;
+    height: 5%;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: blue;
+    border-radius: 20px;
+    padding-left: 10px;
+    box-shadow: 10px 10px 10px black;
+    border-color: black;
+}
+#inputBar::placeholder{
+    color: blue;
+}
+#taskList{
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    margin: 100px;
+}
+
+.tasks{
+    color: blue;
+    margin: 30px;
+    border-radius: 20px;
+    padding: 5px; 
+
 }

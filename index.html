@@ -7,7 +7,39 @@
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-    <pre>To Do List</pre>
+    <p>To Do List</p>
+
+    <input type="text" id="inputBar" placeholder="Enter a task & Press Enter!" onkeypress="addTask()" value="">
+
+    <div id="taskList">
+
+    </div>
+
+    
+
     
 </body>
+<script>
+    function addTask(){
+        if(event.key=="Enter"){
+            var task = document.getElementById("inputBar"); 
+            console.log(task.value); 
+
+            var newTask = document.createElement("input"); 
+            newTask.setAttribute("value", task.value); 
+            newTask.setAttribute("type", "text");
+            newTask.setAttribute("class", "tasks"); 
+            var taskList = document.getElementById("taskList"); 
+            taskList.appendChild(newTask); 
+
+
+            //clear input field 
+            task.value = ""; 
+
+
+        }
+        
+    }
+
+</script>
 </html>
