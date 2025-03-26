@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-    <p>To Do List</p>
-
+    <h1>To Do List</h1>
     <input type="text" id="inputBar" placeholder="Enter a task & Press Enter!" onkeypress="addTask()" value="">
-
-    <div id="taskList">
-
+    <div id="ToDoContainer">
+        <ul id="taskList">
+            
+        </ul>
     </div>
 
     
@@ -20,22 +20,27 @@
     
 </body>
 <script>
+    var element = 1; 
+
     function addTask(){
         if(event.key=="Enter"){
+            //grab input element 
             var task = document.getElementById("inputBar"); 
             console.log(task.value); 
 
-            var newTask = document.createElement("input"); 
-            newTask.setAttribute("value", task.value); 
-            newTask.setAttribute("type", "text");
-            newTask.setAttribute("class", "tasks"); 
-            var taskList = document.getElementById("taskList"); 
-            taskList.appendChild(newTask); 
+            //create a new list item
+            var newItem = document.createElement("li");
+            //create id and for 
+            var newID = "todo" + element; 
+            element ++; 
+            newItem.innerHTML = "<input type=\"checkbox\" id=\""+newID+"\"><label for=\""+newID+"\">"+ task.value +"</label>"; 
 
+            //add to dom 
+            var list = document.getElementById("taskList");
+            list.appendChild(newItem); 
 
             //clear input field 
             task.value = ""; 
-
 
         }
         
