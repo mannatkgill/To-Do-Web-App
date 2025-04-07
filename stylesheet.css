@@ -1,6 +1,6 @@
 body, html {
     background-image: linear-gradient(to bottom right, rgb(223, 186, 234), rgb(74, 17, 88));
-    width: 100vw;
+    min-width: 100vw;
     min-height: 100vh; 
 }
 
@@ -14,28 +14,32 @@ h1{
     font-size: 50px;
     padding-top: 100px;
     letter-spacing: 50px;
-    font-family: "Luckiest Guy", cursive;
+    font-family: "Courier New"; 
     font-weight: bold;
+
 }
 
 #taskList{
     display: flex;
     flex-direction: column;
     align-items: left;
-    margin-left: 400px;
-    margin-right: 400px;
+    margin-left: 200px;
+    margin-right: 200px;
     margin-top: 100px;
     padding-bottom: 100px;
 
 }
 
 li{
-
     font-size: 25px;
-    font-family: "Luckiest Guy", cursive;
+    font-family: "Courier New"; 
     font-weight: bold;
     list-style-type: none;
     margin: 1%;
+}
+
+ul{
+    overflow-wrap: break-word;
 }
 
 #inputBar{
@@ -43,16 +47,17 @@ li{
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
-    width: 25%;
-    height: 5%;
+    width: 450px;
+    height: 40px;
     font-size: 20px;
-    font-family: "Luckiest Guy", cursive;
+    font-family: "Courier New"; 
     font-weight: 900;
     color: blue;
     border-radius: 20px;
     padding-left: 10px;
     box-shadow: 10px 10px 10px black;
     border-color: black;
+   
 }
 
 #taskList{
@@ -64,4 +69,9 @@ label{
     padding-left: 10px;
 }
 
+#ToDoContainer{
+    margin-top: 250px; /* This creates spacing so tasks never overlap the sticky title */
+    margin-left: 100px;
+    margin-right: 100px;
+}
 

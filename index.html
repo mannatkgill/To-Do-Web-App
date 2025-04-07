@@ -7,41 +7,62 @@
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
+
     <h1>To Do List</h1>
-    <input type="text" id="inputBar" placeholder="Enter a task & Press Enter!" onkeypress="addTask()" value="">
+    <input type="text" id="inputBar" placeholder="Enter a task & Press Enter!" onkeypress="addTask()">
     <div id="ToDoContainer">
         <ul id="taskList">
             
         </ul>
     </div>
 
-    
-
-    
 </body>
 <script>
-    var element = 1; 
+    var element = 0; //global variable to label the tasks  
+    if(localStorage.getItem("numElements") == null){
+        localStorage.setItem("numElements", 0); 
+        console.log("NOT FOUND");
+    }else{
+        element = localStorage.getItem("numElements");
+        console.log("FOUND"); 
+        console.log(element); 
+
+        for( let i = 1 ; i <= element ; i++ ){
+            let temp = "todo" + i; 
+            console.log(localStorage.getItem(temp)); 
+        }
+
+
+    }
 
     function addTask(){
-        if(event.key=="Enter"){
-            //grab input element 
-            var task = document.getElementById("inputBar"); 
-            console.log(task.value); 
+        //grab input element 
+        var task = document.getElementById("inputBar"); 
 
+        if(event.key === "Enter" && task.value.replace(/\s/g, '') === ''){
+            alert("Cannot enter an empty string!"); 
+            task.value = ""; //will elimate any white spaces added by user
+        }
+        else if(event.key === "Enter"){
+            element ++;
             //create a new list item
             var newItem = document.createElement("li");
             //create id and for 
-            var newID = "todo" + element; 
-            element ++; 
+            var newID = "todo" + element;  
             newItem.innerHTML = "<input type=\"checkbox\" id=\""+newID+"\"><label for=\""+newID+"\">"+ task.value +"</label>"; 
 
             //add to dom 
             var list = document.getElementById("taskList");
             list.appendChild(newItem); 
 
-            //clear input field 
-            task.value = ""; 
+            //add to local storage 
+            localStorage.setItem("numElements", element); 
+            localStorage.setItem(newID, task.value); 
+            console.log(newID); 
 
+            //clear input field 
+            
+            task.value = ""; 
         }
         
     }
