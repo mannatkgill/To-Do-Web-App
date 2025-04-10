@@ -1,12 +1,15 @@
-body, html {
-    background-image: linear-gradient(to bottom right, rgb(223, 186, 234), rgb(74, 17, 88));
-    min-width: 100vw;
-    min-height: 100vh; 
-}
-
 * {
     margin: 0; 
     padding: 0; 
+    box-sizing: border-box;
+    font-family: "Courier New"; 
+    font-weight: bold;
+}
+
+body, html {
+    background-image: linear-gradient(to bottom right, rgb(223, 186, 234), rgb(61, 11, 73));
+    min-width: 100vw;
+    min-height: 100vh; 
 }
 
 h1{
@@ -14,26 +17,36 @@ h1{
     font-size: 50px;
     padding-top: 100px;
     letter-spacing: 50px;
-    font-family: "Courier New"; 
-    font-weight: bold;
+}
 
+#inputBar{
+    display: block;
+    margin: 50px auto 0px;
+    width: 450px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 900;
+    color: blue;
+    border-radius: 20px;
+    padding-left: 10px;
+    box-shadow: 10px 10px 10px black;
+    border-color: black;
+}
+
+#ToDoContainer{
+    margin: 50px 100px 0px
 }
 
 #taskList{
     display: flex;
     flex-direction: column;
-    align-items: left;
-    margin-left: 200px;
-    margin-right: 200px;
-    margin-top: 100px;
+    justify-content: left;
+    margin: 100px 200px 0px;
     padding-bottom: 100px;
-
 }
 
 li{
     font-size: 25px;
-    font-family: "Courier New"; 
-    font-weight: bold;
     list-style-type: none;
     margin: 1%;
 }
@@ -42,36 +55,8 @@ ul{
     overflow-wrap: break-word;
 }
 
-#inputBar{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
-    width: 450px;
-    height: 40px;
-    font-size: 20px;
-    font-family: "Courier New"; 
-    font-weight: 900;
-    color: blue;
-    border-radius: 20px;
-    padding-left: 10px;
-    box-shadow: 10px 10px 10px black;
-    border-color: black;
-   
-}
-
-#taskList{
-    display: flex;
-    flex-direction: column;
-}
-
 label{
     padding-left: 10px;
 }
 
-#ToDoContainer{
-    margin-top: 250px; /* This creates spacing so tasks never overlap the sticky title */
-    margin-left: 100px;
-    margin-right: 100px;
-}
 
